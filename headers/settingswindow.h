@@ -34,26 +34,29 @@ QT_END_NAMESPACE
 
 namespace Ne {
 
-enum class SettingsOptionType {
+enum class ISettingsOptionType {
     kSettingOptionInvalid,
     kSettingOptionStart = 100,
     kSettingOptionEnd,
 };
 
-class SettingsWindow : public QMainWindow
+class ISettingsWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    SettingsWindow(QWidget *parent = nullptr);
-    ~SettingsWindow();
+    ISettingsWindow(QWidget *parent = nullptr);
+    ~ISettingsWindow();
+
+    ISettingsWindow& operator=(const ISettingsWindow&) = default;
+    ISettingsWindow(const ISettingsWindow&) = default;
 
 private:
     ::Ui::SettingsWindow *ui;
 
     private_data:
                    QString settings{NE_SETTINGS_PATH};
-    QVector<SettingsOptionType> options;
+    QVector<ISettingsOptionType> options;
 
 };
 

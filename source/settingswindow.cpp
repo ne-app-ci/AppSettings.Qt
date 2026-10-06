@@ -13,7 +13,7 @@
 #define NE_HEIGHT 302
 #endif
 
-::Ne::SettingsWindow::SettingsWindow(QWidget *parent)
+::Ne::ISettingsWindow::ISettingsWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::SettingsWindow)
 {
@@ -23,7 +23,7 @@
     this->setFixedSize(QSize(NE_WIDTH, NE_HEIGHT));
 }
 
-::Ne::SettingsWindow::~SettingsWindow()
+::Ne::ISettingsWindow::~ISettingsWindow()
 {
     delete ui;
 }

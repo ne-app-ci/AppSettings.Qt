@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    Ne::SettingsWindow w;
+    ::Ne::ISettingsWindow w;
     w.show();
 
     return a.exec();
